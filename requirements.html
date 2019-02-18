@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#237afc"
+      },
+      "button": {
+        "background": "#fff",
+        "text": "#237afc"
+      }
+    },
+    "theme": "edgeless",
+    "position": "top",
+    "content": {
+      "message": "YouthImmigration collects NO identifying information and does not share anything without your consent.",
+      "href": "legal.html"
+    }
+  })});
+  </script>
 </head>
 <body>
 <ul>
 <li> If you have immigration documents, the law requires you to carry them. </li>
-<li> You must give license, registration, and insurance to police during a 
+<li> You must give license, registration, and insurance to police during a
 traffic stop but you don’t need to provide information to immigration officials. </li>
 <ul>
 <li> Ask, “Are you the police or an immigration official?” </li>
