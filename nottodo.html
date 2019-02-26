@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#237afc"
+      },
+      "button": {
+        "background": "#fff",
+        "text": "#237afc"
+      }
+    },
+    "theme": "edgeless",
+    "position": "top",
+    "content": {
+      "message": "YouthImmigration collects NO identifying information and does not share anything without your consent.",
+      "href": "legal.html"
+    }
+  })});
+  </script>
 </head>
 <body>
 <ul>
@@ -12,9 +35,9 @@
   <li> You do not have a right to lie or mislead → you can be silent, but don’t lie. </li>
   <li> You do not have a right to visit friends or family detained by immigration officials
     without also being detained if you don’t have an immigration status. </li>
-  <li> You do not have a right to fight or resist a search (you have a right to refuse it) → 
+  <li> You do not have a right to fight or resist a search (you have a right to refuse it) →
     do not fight the agent conducting a search; say that you do not consent. </li>
 </ul>
-  
+
 </body>
 </html>
