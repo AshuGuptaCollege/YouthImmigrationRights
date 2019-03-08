@@ -1,3 +1,3 @@
 let name = `Samuel's Story`;
-let story = `SSSACWFACWF`;
+let story = `SSSBCWFACWF`;
 let imgPath = `images/slides/samuel/`;
