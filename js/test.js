@@ -6,6 +6,7 @@
 //global variables
 var count = 1;
 var score = "";
+var visited = [];
 //global static HTML for control bar
 var storyControls = '<div class="story-controls"><a href="#" onclick="back(1)" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-hand-left"></span></a> <a onclick="next(1)" href="#" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-hand-right"></span></a></div>';
 var storyControlsCorrect = '<div class="story-controls"><a href="#" onclick="back(1)" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-hand-left"></span></a> <a onclick="next(2)" href="#" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-hand-right"></span></a></div>';
@@ -17,26 +18,34 @@ var questionControlsB = '<div class="question-controls"><a onclick="next(2)" hre
 
 //function to load a slide and its corresponding nav bar based on its code
 function loadNextSlide(c) {
-  console.log(count);
   if (c == 'S') {
     document.getElementById("slide").src = imgPath + "slide" + count.toString() + ".jpg";
     loadStoryControls(c);
+    visited.push(count);
     return true;
   } else if (c == 'F') {
     document.getElementById("slide").src = imgPath + "slide" + count.toString() + ".jpg";
     loadStoryControls(c);
+    visited.push(count);
     return true;
   } else if ((c == 'A') || (c == 'B')) {
     document.getElementById("slide").src = imgPath + "slide" + count.toString() + ".jpg";
     loadQuestionControls(c);
+    visited.push(count);
     return true;
   } else if (c == 'C') {
-    score += "C";
+    if (visited.indexOf(count) == -1) {
+      score += "C";
+    }
+    visited.push(count);
     document.getElementById("slide").src = imgPath + "slide" + count.toString() + ".jpg";
     loadStoryControls(c);
     return true;
   } else if (c == 'W') {
-    score += "W";
+    if (visited.indexOf(count) == -1) {
+      score += "W";
+    }
+    visited.push(count);
     document.getElementById("slide").src = imgPath + "slide" + count.toString() + ".jpg";
     loadStoryControls(c);
     return true;
@@ -93,7 +102,6 @@ function saveScore() {
 
 //output HTML for a score report based on current score, or previous score if game not finished
 function showScoreReport() {
-  //var s = localStorage.getItem('yi-' + name + '-story-score');
   var scoreMsg = "";
   if (getPercentCorrect(score) < 40) {
     scoreMsg = "Make sure you try again to learn more!";
