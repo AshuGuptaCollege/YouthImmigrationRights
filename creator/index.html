@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Youth Immigration - Story File Creator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="../js/login.js"></script>
+  <script src="creator.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav style="background-color: #E4F2FC; margin-bottom: 50px;" class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="font-family: 'Gloria Hallelujah' , cursive;">Youth Immigration</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="../index.html">Home</a></li>
+        <li><a href="#">Lawyers</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Languages &nbsp;<img src="../images/assets/en.png" width="20px"></img></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="story-creator-link" href="#">Story Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
+        <li><a href="#" id="username-label">Hi User!</a></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+
+  <center>
+    <h1 style="font-family: 'Gloria Hallelujah' , cursive;">Story File Creator <span class="glyphicon glyphicon-pencil"></span></h1> <br />
+
+    <hr />
+
+    <label style="font-family: 'Gloria Hallelujah' , cursive;">Story Title: </label> <input type="text" size="51" placeholder="enter title of story here (e.g. 'Example Story')" value="" id="input-title"></input><br />
+    <label style="font-family: 'Gloria Hallelujah' , cursive;">Image Path: </label> <input type="text" size="50" placeholder="enter image path here (e.g. '../images/slides/example/')" value="" id="input-imgpath"></input><br /><br />
+    <label style="font-family: 'Gloria Hallelujah' , cursive;">Story Script: </label><br /> <textarea placeholder="for example: story,story,question-a,correct,wrong,story,question-b,correct,wrong,story" style="resize: none;" id="input-story-script" rows="10" cols="80"></textarea><br /><br /><a href="#" onclick="generateStoryFile()" class="btn btn-success">Generate Story File <span class="glyphicon glyphicon-ok-sign"></span></a> <a href="#" onclick="refresh()" class="btn btn-danger">Reset Fields <span class="glyphicon glyphicon-refresh"></span></a><hr />
+    <label style="font-family: 'Gloria Hallelujah' , cursive;">Output of story.js File: </label><br /> <textarea style="font-family: 'Courier New', Courier, monospace;" onclick="textCopySelect(0)" rows="8" style="resize: none;" id="output-story-file" cols="70"></textarea><br /><br /> <p style="font-family: 'Gloria Hallelujah' , cursive;">Save the above text in a file named "story.js" in the same folder as your HTML story page (generated below).</p><br /><br />
+    <label style="font-family: 'Gloria Hallelujah' , cursive;">Output of story.html File: </label><br /> <textarea style="font-family: 'Courier New', Courier, monospace;" onclick="textCopySelect(1)" rows="8" style="resize: none;" id="output-story-html" cols="70"></textarea><br /><br /> <p style="font-family: 'Gloria Hallelujah' , cursive;">Save the above text in a file named "story.html" in the same folder as your story.js file, and you're done!</p>
+
+<hr />
+<div class="container">
+  <center><small>Copyright &copy Youth Immigration Innovation Lab Group 2019 <a href="#">Legal</a></small></center>
+</div>
+
+</body>
+</html>
