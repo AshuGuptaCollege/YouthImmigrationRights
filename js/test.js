@@ -34,7 +34,7 @@ function loadNextSlide(c) {
     visited.push(count);
     return true;
   } else if (c == 'C') {
-    if (visited.indexOf(count) == -1) {
+    if ((visited.indexOf(count) == -1) && (visited.indexOf(count + 1) == -1)) {
       score += "C";
     }
     visited.push(count);
@@ -42,7 +42,7 @@ function loadNextSlide(c) {
     loadStoryControls(c);
     return true;
   } else if (c == 'W') {
-    if (visited.indexOf(count) == -1) {
+    if ((visited.indexOf(count) == -1) && (visited.indexOf(count - 1) == -1)) {
       score += "W";
     }
     visited.push(count);
@@ -69,7 +69,7 @@ function getCorrectPoints(s) {
 //get the percentage correct from a score string
 function getPercentCorrect(s) {
   if (s.length > 0) {
-    return (getCorrectPoints(s) / s.length) * 100;
+    return ((getCorrectPoints(s) / s.length) * 100).toFixed(0);
   }
   return 0;
 }
