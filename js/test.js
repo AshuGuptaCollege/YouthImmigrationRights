@@ -99,7 +99,7 @@ function showScoreReport() {
     scoreMsg = "Make sure you try again to learn more!";
   } else if ((getPercentCorrect(score) > 40) && (getPercentCorrect(score) < 70)) {
     scoreMsg = "Not bad! You're almost an expert!";
-  } else if (getPercentCorrect(score) == 100) {
+  } else if (getPercentCorrect(score) > 99) {
     scoreMsg = "Wow! You aced the game!";
   } else {
     scoreMsg = "Great Job! You're almost an expert!";
@@ -110,9 +110,9 @@ function showScoreReport() {
     if (!((scorePrev == null) || (scorePrev == ""))) {
       if (getPercentCorrect(scorePrev) < 40) {
         scoreMsg = "You can improve on your last score!";
-      } else if ((getPercentCorrect(scorePrev) > 40) && (getPercentCorrect(score) < 70)) {
+      } else if ((getPercentCorrect(scorePrev) > 40) && (getPercentCorrect(scorePrev) < 70)) {
         scoreMsg = "Not bad! You can improve on your last score this time.";
-      } else if (getPercentCorrect(scorePrev) == 100) {
+      } else if (getPercentCorrect(scorePrev) > 99) {
         scoreMsg = "Wow! You already aced the game!";
       } else {
         scoreMsg = "You did a great job! Try to get a perfect score this time.";
