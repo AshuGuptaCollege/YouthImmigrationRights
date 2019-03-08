@@ -143,6 +143,11 @@ function restart(x) {
 function startGame() {
   loadNextSlide(story.charAt(0));
   showScoreReport();
+  try {
+    main();
+  } catch (e) {
+
+  }
   document.getElementById("slide-controls").innerHTML = storyControlsPrevDisabled;
 }
 

@@ -32,7 +32,8 @@
   </script>
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
-<script src="login.js"></script>
+<script src="js/test.js"></script>
+<script src="js/login.js"></script>
 
 <body onload="main()">
 
@@ -57,19 +58,19 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a id="story-creator-link" href="creator/index.html">Story Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
         <li><a href="#" id="username-label">Hi User!</a></li>
-        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a onclick="" id="login-btn" href="login.html"></a></li>
       </ul>
     </div>
   </div>
   </nav>
 
   <center><div class="page-header">
-    <h1>Login to Youth Immigration</h1>
+    <h1 style="font-family: 'Gloria Hallelujah' , cursive;">Login to Your YI Account!</h1>
   </div></center>
 
   <div class= "container">
       <!--Login-->
-      <form onsubmit="login()">
+
       <div class="form-group">
         <label for="usr">Username</label>
         <input type="text" class="form-control" id="username-input" placeholder="Enter username">
@@ -80,15 +81,11 @@
         <input type="password" class="form-control" id="password-input" placeholder="Password">
       </div>
       <small><p id="login-confirmation" class="form-text text-muted"></p></small>
-      <button type="submit" class="btn btn-primary btn-sm">Submit</button>
-    </form>
+      <button onclick="login()" class="btn btn-primary btn-sm">Submit</button>
+    <br />
+    <small><a href="signup.html">Don't have an account? Sign up for one</a>
   </div>
-    <center>
-      <hr />
-    <button type="button" class="btn btn-info btn-lg" width="33%" onclick="location.href = 'login.html';">Sign Up</button> &nbsp; &nbsp; &nbsp;
-    <button type="button" class="btn btn-info btn-lg" width="33%" onclick="location.href = 'login.html';">Forgot Password?</button>
-    <hr />
-     </center>
+
      <hr />
 </div>
 <div class="container">

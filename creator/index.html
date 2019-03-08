@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
 
-<body>
+<body onload="main()">
 
   <nav style="background-color: #E4F2FC; margin-bottom: 50px;" class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
@@ -26,16 +26,16 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../index.html">Home</a></li>
+        <li class="active"><a href="index.html">Home</a></li>
         <li><a href="#">Lawyers</a></li>
         <li><a href="#">Resources</a></li>
         <li><a href="#">FAQs</a></li>
-        <li><a href="#">Languages &nbsp;<img src="../images/assets/en.png" width="20px"></img></a></li>
+        <li><a href="#">Languages &nbsp;<img src="images/assets/en.png" width="20px"></img></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a id="story-creator-link" href="#">Story Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
+        <li><a id="story-creator-link" href="creator/index.html">Story Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
         <li><a href="#" id="username-label">Hi User!</a></li>
-        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a onclick="" id="login-btn" href="login.html"></a></li>
       </ul>
     </div>
   </div>
