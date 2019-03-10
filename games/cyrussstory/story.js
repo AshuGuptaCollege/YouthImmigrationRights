@@ -1,3 +1,3 @@
 let name = `Cyrus's Story`;
-let story = `SSSBCWBCWACWACWFBCWACWBCWFBCWFACWFBCWF`;
+let story = `SSSBCWBCWACWACWFBCWACWBCWFBCWFBCWFBCWF`;
 let imgPath = ``;
