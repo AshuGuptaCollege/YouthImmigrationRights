@@ -35,8 +35,10 @@ function navBarInjection() {
     </div>
   </div>
   </nav>`;
+  var footer = `<center><small>Copyright &copy Youth Immigration Innovation Lab Group 2019 <a href="#">Legal</a></small></center>`;
   try {
     document.getElementById("nav-div").innerHTML = nav_code;
+    document.getElementById("nav-footer").innerHTML = footer;
   } catch (e) {
 
   }
