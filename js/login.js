@@ -5,7 +5,42 @@
 
 //global variable for logging in
 var timeout = 1250;
-var url = "";
+var url = "http://ashuguptacollege.github.io/YouthImmigrationRights/";
+
+//login nav bar injection
+function navBarInjection() {
+  var nav_code = `<nav style="background-color: #E4F2FC; margin-bottom: 50px;" class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="font-family: 'Gloria Hallelujah' , cursive;">Youth Immigration</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="` + url + `index.html">Home</a></li>
+        <li><a href="#">Lawyers</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#"><img src="` + url + `images/assets/en.png" width="20px"></img></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="story-creator-link" href="` + url + `creator/index.html">Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
+        <li><a href="` + url + `scoreReport.html">Score Report <span class="glyphicon glyphicon-ok-circle"></span></a></li>
+        <li><a href="#" id="username-label">Hi User!</a></li>
+        <li><a onclick="" id="login-btn" href="` + url + `login.html"></a></li>
+      </ul>
+    </div>
+  </div>
+  </nav>`;
+  try {
+    document.getElementById("nav-div").innerHTML = nav_code;
+  } catch (e) {
+
+  }
+}
 
 //create an account on the computer
 function signUp() {
@@ -196,6 +231,7 @@ function nothing() {
 
 //function to run all onload functions (except test.html)
 function main() {
+  navBarInjection();
   setUsernameLabel();
   setLoginButton();
 }
