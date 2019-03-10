@@ -5,6 +5,7 @@
 
 //global variable for logging in
 var timeout = 1250;
+var url = "";
 
 //create an account on the computer
 function signUp() {
@@ -99,6 +100,15 @@ function getPassword() {
   return "";
 }
 
+
+function deleteAllData() {
+  var conf = confirm("Are you sure you want to delete all your data? This data cannot be restored.");
+  if (conf == true) {
+    localStorage.clear();
+    restart(10);
+  }
+}
+
 //get login status
 function toggleLoginStatus() {
   try {
@@ -163,15 +173,25 @@ function setLoginButton() {
   var btn_style = '<span id="login-btn-span" class="glyphicon glyphicon-log-in"></span>';
   try {
     if (getLoginStatus() == true) {
+      document.getElementById("story-creator-link").innerHTML = "Creator <span class='glyphicon glyphicon-pencil'></span>";
       btn_label = 'Logout';
       btn_style = '<span id="login-btn-span" class="glyphicon glyphicon-log-out"></span>';
       document.getElementById("login-btn").innerHTML = btn_label + " " + btn_style;
+      document.getElementById("login-btn").setAttribute("href", "#");
       document.getElementById("login-btn").setAttribute("onClick", "javascript: toggleLoginStatus();");
+    } else {
+      document.getElementById("story-creator-link").innerHTML = "";
+      document.getElementById("login-btn").innerHTML = btn_label + " " + btn_style;
+      document.getElementById("login-btn").setAttribute("onClick", "javascript: nothing();");
+      document.getElementById("login-btn").setAttribute("href", url + "login.html");
     }
-    document.getElementById("login-btn").innerHTML = btn_label + " " + btn_style;
   } catch (e) {
 
   }
+}
+
+function nothing() {
+
 }
 
 //function to run all onload functions (except test.html)

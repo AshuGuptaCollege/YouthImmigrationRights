@@ -86,8 +86,7 @@ function resetScore() {
 
 //finish the game
 function finish() {
-  //localStorage.setItem('yi-' + name + '-story-score', score);
-  showScoreReport();
+  showScoreReport(score, "scoreReport", name, "", "");
 }
 
 //save the score in local storage
@@ -101,20 +100,20 @@ function saveScore() {
 }
 
 //output HTML for a score report based on current score, or previous score if game not finished
-function showScoreReport() {
+function showScoreReport(s, dest, n, prev, after) {
   var scoreMsg = "";
-  if (getPercentCorrect(score) < 40) {
+  if (getPercentCorrect(s) < 40) {
     scoreMsg = "Make sure you try again to learn more!";
-  } else if ((getPercentCorrect(score) > 40) && (getPercentCorrect(score) < 70)) {
+  } else if ((getPercentCorrect(s) > 40) && (getPercentCorrect(s) < 70)) {
     scoreMsg = "Not bad! You're almost an expert!";
-  } else if (getPercentCorrect(score) > 99) {
+  } else if (getPercentCorrect(s) > 99) {
     scoreMsg = "Wow! You aced the game!";
   } else {
     scoreMsg = "Great Job! You're almost an expert!";
   }
-  var scorerep = "You scored: " + getCorrectPoints(score).toString() + " / " + score.length.toString() + " total points<br /><br /><strong>" + getPercentCorrect(score).toString() + "%</strong> - " + scoreMsg + '<br /><br /><a id="save-score-btn" onclick="saveScore()" href="#" class="btn btn-success">Save My Score <span id="save-score-span" class="glyphicon glyphicon-floppy-save"></span></a>';
-  if (score.length == 0) {
-    var scorePrev = localStorage.getItem('yi-' + name + '-story-score', score);
+  var scorerep = "Score: " + getCorrectPoints(s).toString() + " / " + s.length.toString() + " total points<br /><br /><strong>" + getPercentCorrect(s).toString() + "%</strong> - " + scoreMsg + '<br /><br /><a id="save-score-btn" onclick="saveScore()" href="#" class="btn btn-success">Save My Score <span id="save-score-span" class="glyphicon glyphicon-floppy-save"></span></a>';
+  if (s.length == 0) {
+    var scorePrev = localStorage.getItem('yi-' + n + '-story-score');
     if (!((scorePrev == null) || (scorePrev == ""))) {
       if (getPercentCorrect(scorePrev) < 40) {
         scoreMsg = "You can improve on your last score!";
@@ -125,13 +124,37 @@ function showScoreReport() {
       } else {
         scoreMsg = "You did a great job! Try to get a perfect score this time.";
       }
-      scorerep = "Last time, you scored: " +
+      if (after != "") {
+        var path = "games/" + parseName(n) + "/test.html";
+        scoreMsg = "<a href='" + path + "'>" + scoreMsg + "</a>";
+      }
+      scorerep = "Score: " +
         getCorrectPoints(scorePrev).toString() + " / " + scorePrev.length.toString() + " total points<br /><br /><strong>" + getPercentCorrect(scorePrev).toString() + "%</strong> - " + scoreMsg + '<br /><br />';
     } else {
-      scorerep = "You've never played this game before! finish the game first to see your score report!";
+      //user has not played this game or has not saved his progress
+      scorerep = "You've never played this game before! Play the game to see your score report!";
+      if (after != "") {
+        var path = "games/" + parseName(n) + "/test.html";
+        scorerep = "<a href='" + path + "'>You've never played this game before! Click here to play the game!</a>";
+      }
     }
   }
-  document.getElementById("scoreReport").innerHTML = scorerep;
+  if (after == "") {
+    document.getElementById(dest).innerHTML = prev + scorerep + after;
+  } else {
+    document.getElementById(dest).innerHTML += prev + scorerep + after;
+  }
+}
+
+function parseName(n) {
+  var result = "";
+  var i;
+  for (i = 0; i < n.length; i++) {
+    if (!((n.charAt(i) == ' ') || (n.charAt(i) == "'"))) {
+      result += n.charAt(i);
+    }
+  }
+  return result.toLowerCase();
 }
 
 //a window reload method that will reload after x / 1000 seconds
@@ -142,7 +165,7 @@ function restart(x) {
 //starter function that initializes the slides
 function startGame() {
   loadNextSlide(story.charAt(0));
-  showScoreReport();
+  showScoreReport(score, "scoreReport", name, "", "");
   try {
     main();
   } catch (e) {
@@ -198,5 +221,51 @@ function back(x) {
   loadNextSlide(story.charAt(count - 1));
   if (count == 1) {
     document.getElementById("slide-controls").innerHTML = storyControlsPrevDisabled;
+  }
+}
+
+//ScoreReport
+function scoreReportLoad() {
+  main();
+  setScoreReportTitle();
+  setScoreReportVerbose();
+}
+
+function getScoreStringForStory(st) {
+  return localStorage.getItem("yi-" + st + "-story-score");
+}
+
+function getQuestionGraphicHTML(st, iter) {
+  var scoreString = getScoreStringForStory(st);
+  if ((scoreString == null) || (scoreString == "")) {
+    return "";
+  }
+  var i;
+  var result = "";
+  for (i = 0; i < scoreString.length; i++) {
+    if (scoreString.charAt(i) == 'C') {
+      result += "<strong><h2>Q" + (i + 1).toString() + ": <span style='color: green !important;' class='glyphicon glyphicon-ok'></span></h2></strong> <small>Competency Tested: <i>" + storyQuestionDescriptions[iter][i] + "</i></small> ";
+    } else if (scoreString.charAt(i) == 'W') {
+      result += "<strong><h2>Q" + (i + 1).toString() + ": <span style='color: red !important;' class='glyphicon glyphicon-remove'></span></h2> <small>Competency Tested: <i>" + storyQuestionDescriptions[iter][i] + "</i></small></strong> ";
+    }
+  }
+  return result;
+}
+
+function setScoreReportVerbose() {
+  var i;
+  for (i = 0; i < allStories.length; i++) {
+    showScoreReport("", "score-report-verbose", allStories[i], "Story: <i><strong>" + allStories[i] + " (" + storyCompetencies[i] + ")</strong></i><br /><br />Description: <i><strong>" + storyDescriptions[i] + "</strong></i><br />" + getQuestionGraphicHTML(allStories[i], i) + "<br /><br />", "<hr />");
+  }
+}
+
+function setScoreReportTitle() {
+  try {
+    var user = getUsername();
+    if (getLoginStatus() == true) {
+      document.getElementById("score-report-title").innerHTML = user + "'s Score Report:";
+    }
+  } catch (e) {
+
   }
 }

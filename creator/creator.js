@@ -15,8 +15,8 @@ var story_html_file = `<!DOCTYPE html>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="https://ashuguptacollege.github.io/YouthImmigrationRights/js/test.js"></script>
-  <script src="https://ashuguptacollege.github.io/YouthImmigrationRights/js/login.js"></script>
+  <script src="../../js/login.js"></script>
+  <script src="../../js/test.js"></script>
   <script src="story.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
@@ -35,20 +35,20 @@ var story_html_file = `<!DOCTYPE html>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
+        <li class="active"><a href="../../index.html">Home</a></li>
         <li><a href="#">Lawyers</a></li>
         <li><a href="#">Resources</a></li>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Languages &nbsp;<img src="images/assets/en.png" width="20px"></img></a></li>
+        <li><a href="#"><img src="../../images/assets/en.png" width="20px"></img></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><a id="story-creator-link" href="../../creator/index.html">Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
+        <li><a href="../../scoreReport.html">Score Report <span class="glyphicon glyphicon-ok-circle"></span></a></li>
         <li><a href="#" id="username-label">Hi User!</a></li>
-        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a onclick="" id="login-btn" href="../../login.html"></a></li>
       </ul>
     </div>
   </div>
-</nav>
+  </nav>
 
   <center>
     <h1 style="font-family: 'Gloria Hallelujah' , cursive;">Test Your Knowledge</h1> <br />

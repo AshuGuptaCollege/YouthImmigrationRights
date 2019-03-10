@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Youth Immigration - Score Report</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <style type="text/css">
+  @media print {
+        a[href]:after {
+          content: "" !important;
+        }
+      }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="js/login.js"></script>
+  <script src="allstories.js"></script>
+  <script src="js/test.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav style="background-color: #E4F2FC; margin-bottom: 50px;" class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="font-family: 'Gloria Hallelujah' , cursive;">Youth Immigration</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="#">Lawyers</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#"><img src="images/assets/en.png" width="20px"></img></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="story-creator-link" href="creator/index.html"></a></li>
+        <li><a href="scoreReport.html">Score Report <span class="glyphicon glyphicon-ok-circle"></span></a></li>
+        <li><a href="#" id="username-label">Hi User!</a></li>
+        <li><a onclick="" id="login-btn" href="login.html"></a></li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+
+  <center>
+    <a onclick="window.print()" class="btn btn-lg btn-success hidden-print">Print Your Report <span class="glyphicon glyphicon-print"></span></a>
+    <hr class="hidden-print" />
+    <h1 id="score-report-title" style="font-family: 'Gloria Hallelujah' , cursive;">Your Score Report:</h1> <hr />
+    <div id="score-report-verbose"></div>
+  <script type="text/javascript">
+  window.onload = scoreReportLoad();
+  </script>
+  <a onclick="window.print()" class="btn btn-lg btn-success hidden-print">Print Your Report <span class="glyphicon glyphicon-print"></span></a>
+  <hr class="hidden-print" />
+<a onclick="deleteAllData()" class="btn btn-lg btn-danger hidden-print">Delete All Data <span class="glyphicon glyphicon-remove-circle"></span></a><br /><br /><small class="hidden-print"><i>We take your privacy seriously. Press the above button to delete your account and all game scores.</i></small><hr class="hidden-print" />
+</center>
+<div class="container">
+  <center><small class="hidden-print">Copyright &copy Youth Immigration Innovation Lab Group 2019 <a href="#">Legal</a></small></center>
+</div>
+
+</body>
+</html>
