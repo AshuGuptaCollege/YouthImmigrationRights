@@ -1,3 +1,3 @@
 let name = `Sara's Story`;
-let story = `SBCWFBCW`;
+let story = `SSBCWFBCW`;
 let imgPath = ``;
