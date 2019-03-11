@@ -15,7 +15,7 @@ function navBarInjection() {
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span style="font-size: 125%; color: #4376a0;" class="glyphicon glyphicon-menu-hamburger"></span>
       </button>
-      <a class="navbar-brand" href="#" style="font-family: 'Gloria Hallelujah' , cursive;">Youth Immigration</a>
+      <a class="navbar-brand" href="` + url + `index.html" style="font-family: 'Gloria Hallelujah' , cursive;">Youth Immigration</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
