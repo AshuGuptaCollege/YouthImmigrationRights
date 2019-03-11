@@ -6,7 +6,8 @@
 //global variable to store the story file contents
 var story_file = `let name = \`\`;let story = \`\`;let imgPath = \`\`;`
 
-var story_html_file = `<!DOCTYPE html>
+var story_html_file = `
+<!DOCTYPE html>
 <html>
 <head>
   <title>Youth Immigration - Play the Game to Learn</title>
@@ -41,9 +42,8 @@ var story_html_file = `<!DOCTYPE html>
     <hr />
   </center>
 
-<div class="container">
-  <center><small>Copyright &copy Youth Immigration Innovation Lab Group 2019 <a href="#">Legal</a></small></center>
-</div>
+  <div class="container" id = "nav-footer">
+  </div>
 
 </body>
 </html>

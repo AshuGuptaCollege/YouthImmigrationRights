@@ -13,9 +13,7 @@ function navBarInjection() {
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span style="font-size: 125%; color: #4376a0;" class="glyphicon glyphicon-menu-hamburger"></span>
       </button>
       <a class="navbar-brand" href="#" style="font-family: 'Gloria Hallelujah' , cursive;">Youth Immigration</a>
     </div>
@@ -35,7 +33,7 @@ function navBarInjection() {
     </div>
   </div>
   </nav>`;
-  var footer = `<center><small>Copyright &copy Youth Immigration Innovation Lab Group 2019 <a href="#">Legal</a></small></center>`;
+  var footer = `<center><small>Copyright &copy Youth Immigration Innovation Lab Group 2019 | <a href="#">Legal</a> | <a href="http://bit.ly/yir-feedback">Feedback</a></small></center>`;
   try {
     document.getElementById("nav-div").innerHTML = nav_code;
     document.getElementById("nav-footer").innerHTML = footer;
