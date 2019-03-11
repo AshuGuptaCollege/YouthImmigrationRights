@@ -32,7 +32,7 @@ var story_html_file = `
 
 
   <div class= "container">
-    <img id="slide" src="" width="600px"></img>
+    <img id="slide" src="" style="max-width: 600px;" width="90%"></img>
     <div id="slide-controls"></div>
   </div>
   <center>
