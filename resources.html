@@ -5,12 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
   <script>
+
   window.addEventListener("load", function(){
   window.cookieconsent.initialise({
     "palette": {
@@ -30,13 +31,26 @@
     }
   })});
 
-
+  $(document).ready(function(){
+  $("button").click(function(){
+    $(this).siblings("ul").toggle();
+    if ($(this).text() === " View Resources") {
+      $(this).html('Close');
+    }
+    else if ($(this).text() === "Close") {
+      $(this).html(' View Resources');
+    }
+  });
+  });
   </script>
   <style>
   .myTitle {
    margin: 0px;
    padding: 0px;
 }
+  ul {
+  display: none;
+  }
   </style>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
@@ -44,20 +58,22 @@
 <script src="js/login.js"></script>
 <body onload="main()">
 
-  <div id="nav-div">
+<div id="nav-div">
 </div>
 
   <center>
     <h1 style="font-family: 'Gloria Hallelujah' , cursive;">Resources</h1>
   </center>
 
-  <hr />
-  <h1 style= "margin-left:20px;">Low Cost and Free Immigration Legal Service Providers </h1>
-  <hr />
 
 <div class = "container">
-<div class = "state" id = "atag">
-<h3><b> Alabama </b></h3>
+  <hr/>
+  <h3 style= "margin-left:20px;">Low Cost and Free Immigration Legal Service Providers (By State)  </h3>
+  <hr/>
+
+<div class = "state">
+<h3 style= "display: inline-block;"><b> Alabama </b></h3>
+<button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
 <ul>
   <li> Hispanic Catholic Social Services HCSS La Casita <br/>
 92 Oxmoor Road
@@ -66,9 +82,11 @@ Homewood, AL 35209 <br/>
 </li>
 </ul>
 </div>
+<hr/>
 
 <div class = "state">
-<h3><b> Arizona </b></h3>
+<h3 style= "display: inline-block;"><b> Arizona </b></h3>
+<button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
 <ul>
   <li> <p class= "myTitle"><b> Florence Immigrant and Refugee Rights Project </b></p>
     <p>
@@ -92,10 +110,12 @@ Homewood, AL 35209 <br/>
     (602) 416-7200 </p>
   </li>
 </ul>
-</div>
 
+</div>
+<hr/>
 <div class = "state">
-<h3><b> Arkansas </b></h3>
+<h3 style= "display: inline-block;"><b> Arkansas </b></h3>
+<button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
 <ul>
   <li>
     <p class="myTitle"><b>Catholic Charities Immigration Services- Little Rock</b></p>
@@ -109,9 +129,11 @@ Homewood, AL 35209 <br/>
   </li>
 </ul>
 </div>
+<hr/>
 
 <div class = "state">
-<h3><b> California (Los Angeles) </b></h3>
+<h3 style= "display: inline-block;"><b> California (Los Angeles) </b></h3>
+<button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
 <ul>
   <li>
     <p class="myTitle"><b>Esperanza Immigrant Rights Project</b></p>
@@ -135,9 +157,11 @@ Homewood, AL 35209 <br/>
   </li>
 </ul>
 </div>
+<hr/>
 
 <div class = "state">
-<h3><b> California (San Diego) </b></h3>
+<h3 style= "display: inline-block;"><b> California (San Diego) </b></h3>
+<button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
 <ul>
   <li>
     <p class="myTitle"><b>Casa Cornelia Law Center</b></p>
@@ -146,9 +170,11 @@ Homewood, AL 35209 <br/>
   </li>
 </ul>
 </div>
+<hr/>
 
 <div class = "state">
-<h3><b> California (San Francisco) </b></h3>
+<h3 style= "display: inline-block;"><b> California (San Francisco) </b></h3>
+<button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
 <ul>
   <li>
     <p class="myTitle"><b>Asian Law Caucus</b></p>
@@ -187,9 +213,11 @@ Homewood, AL 35209 <br/>
   </li>
 </ul>
 </div>
+<hr/>
 
 <div class = "state">
-<h3><b> Colorado </b></h3>
+<h3 style= "display: inline-block;"><b> Colorado </b></h3>
+<button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
 <ul>
   <li>
     <p class="myTitle"><b>Catholic Immigration Services Catholic Charities</b></p>
@@ -203,9 +231,11 @@ Homewood, AL 35209 <br/>
   </li>
 </ul>
 </div>
+<hr/>
 
 <div class = "state">
-<h3><b> Connecticut </b></h3>
+<h3 style= "display: inline-block;"><b> Connecticut </b></h3>
+<button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
 <ul>
   <li>
     <p class="myTitle"><b>International Institute of Connecticut</b></p>
@@ -229,6 +259,20 @@ Homewood, AL 35209 <br/>
   </li>
 </ul>
 </div>
+<hr/>
+
+<div class = "state">
+<h3 style= "display: inline-block;"><b> Delaware </b></h3>
+<button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
+<ul>
+  <li>
+    <p class="myTitle"><b>Community Legal Aid Society</b></p>
+    <p>100 W 10th St #801 Wilmington, DE 19801   <br/>
+    (302) 575-0660 </p>
+  </li>
+</ul>
+</div>
+<hr/>
 
 </div>
 <div class="container" id = "nav-footer">

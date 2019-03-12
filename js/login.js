@@ -21,7 +21,7 @@ function navBarInjection() {
       <ul class="nav navbar-nav">
         <li class="active"><a href="` + url + `index.html">Home</a></li>
         <li><a href="#">Lawyers</a></li>
-        <li><a href="#">Resources</a></li>
+        <li><a href="` + url + `resources.html">Resources</a></li>
         <li><a href="#"><img src="` + url + `images/assets/en.png" width="20px"></img></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
