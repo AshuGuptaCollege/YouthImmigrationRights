@@ -56,9 +56,9 @@ function navBarInjection() {
 function getLanguageLabel(lg, lb) {
   var translations = [
     ["English", "Spanish", "Chinese", "French"], //english
-    ["Inglés (EN)", "Español", "Chino (CH)", "Francés (FR)"], //spanish
-    ["英语（EN)", "西班牙语（SP)", "中文", "法语（FR)"], //chinese
-    ["Anglais (EN)", "Espagnol (SP)", "Chinois (CH)", "Français"] //french
+    ["Inglés (EN)", "Español (SP)", "Chino (CH)", "Francés (FR)"], //spanish
+    ["英语（EN)", "西班牙语（SP)", "中文 (CH)", "法语（FR)"], //chinese
+    ["Anglais (EN)", "Espagnol (SP)", "Chinois (CH)", "Français (FR)"] //french
   ];
   var x = 0;
   var y = 0;
@@ -76,7 +76,6 @@ function getLanguageLabel(lg, lb) {
   } else {
     console.log("error: incorrect language encoding!");
   }
-
   if (lb == "en") {
     y = 0;
 
@@ -92,7 +91,6 @@ function getLanguageLabel(lg, lb) {
   } else {
     console.log("error: incorrect language encoding!");
   }
-
   return translations[x][y];
 }
 
