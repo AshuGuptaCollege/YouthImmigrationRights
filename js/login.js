@@ -4,8 +4,9 @@
 //version 2
 
 //global variable for logging in
-var timeout = 1250;
-var url = "http://ashuguptacollege.github.io/YouthImmigrationRights/";
+var timeout = 1250; //default timeout in seconds * 1000 units
+var url = "http://ashuguptacollege.github.io/YouthImmigrationRights/"; //url global variable for absolute links
+var lang = "en"; //language global variable
 
 //login nav bar injection
 function navBarInjection() {
@@ -22,7 +23,17 @@ function navBarInjection() {
         <li class="active"><a href="` + url + `index.html">Home</a></li>
         <li><a href="#">Lawyers</a></li>
         <li><a href="` + url + `resources.html">Resources</a></li>
-        <li><a href="#"><img src="` + url + `images/assets/en.png" width="20px"></img></a></li>
+        <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ` + getLanguageLabel(lang, lang) + `&nbsp;<img src="` + url + `images/assets/lang-flags/` + lang + `.png" width="20px"></img>
+                </a>
+                <div style="min-width: 120px !important; text-align: center;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('en')">` + getLanguageLabel(lang, "en") + `&nbsp;&nbsp;<img src="` + url + `images/assets/lang-flags/en.png" width="20px"></img></a><br />
+                  <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('sp')">` + getLanguageLabel(lang, "sp") + `&nbsp;<img src="` + url + `images/assets/lang-flags/sp.png" width="20px"></img></a><br />
+                  <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('ch')">` + getLanguageLabel(lang, "ch") + `&nbsp;<img src="` + url + `images/assets/lang-flags/ch.png" width="20px"></img></a><br />
+                  <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('fr')">` + getLanguageLabel(lang, "fr") + `&nbsp;&nbsp;&nbsp;<img src="` + url + `images/assets/lang-flags/fr.png" width="20px"></img></a><br />
+                </div>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a id="story-creator-link" href="` + url + `creator/index.html">Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
@@ -39,6 +50,69 @@ function navBarInjection() {
     document.getElementById("nav-footer").innerHTML = footer;
   } catch (e) {
 
+  }
+}
+
+function getLanguageLabel(lg, lb) {
+  var translations = [
+    ["English", "Spanish", "Chinese", "French"], //english
+    ["Inglés (EN)", "Español", "Chino (CH)", "Francés (FR)"], //spanish
+    ["英语（EN)", "西班牙语（SP)", "中文", "法语（FR)"], //chinese
+    ["Anglais (EN)", "Espagnol (SP)", "Chinois (CH)", "Français"] //french
+  ];
+  var x = 0;
+  var y = 0;
+  if (lg == "en") {
+    x = 0;
+  } else if (lg == "sp") {
+    x = 1;
+
+  } else if (lg == "ch") {
+    x = 2;
+
+  } else if (lg == "fr") {
+    x = 3;
+
+  } else {
+    console.log("error: incorrect language encoding!");
+  }
+
+  if (lb == "en") {
+    y = 0;
+
+  } else if (lb == "sp") {
+    y = 1;
+
+  } else if (lb == "ch") {
+    y = 2;
+
+  } else if (lb == "fr") {
+    y = 3;
+
+  } else {
+    console.log("error: incorrect language encoding!");
+  }
+
+  return translations[x][y];
+}
+
+//function to change language and update navbar
+function changeLanguage(lg) {
+  lang = lg;
+  localStorage.setItem("yi-lang", lang);
+  setTimeout('window.location.reload()', 10);
+}
+
+//function to retrieve current language setting or set to english default
+function getLanguage() {
+  try {
+    var getLang = localStorage.getItem("yi-lang");
+    if ((getLang == "") || (getLang == null)) {
+      getLang = "en";
+    }
+    lang = getLang;
+  } catch (e) {
+    lang = "en";
   }
 }
 
@@ -84,24 +158,20 @@ function signUp() {
 function login() {
   var usernamein = document.getElementById("username-input").value;
   var passwordin = document.getElementById("password-input").value;
-  //try {
-  var u = getUsername();
-  var p = getPassword();
-  console.log(u);
-  console.log(p);
-  console.log(usernamein);
-  console.log(passwordin);
-  if ((usernamein == u) && (u != "Guest")) {
-    if ((passwordin == p) && (p != "")) {
-      localStorage.setItem("youth-immi-logged-in", "true");
-      document.getElementById("login-confirmation").innerHTML = "Account Login Successful! You will be redirected to the homepage.";
-      setTimeout("location.href = 'index.html'", timeout);
-      return true;
+  try {
+    var u = getUsername();
+    var p = getPassword();
+    if ((usernamein == u) && (u != "Guest")) {
+      if ((passwordin == p) && (p != "")) {
+        localStorage.setItem("youth-immi-logged-in", "true");
+        document.getElementById("login-confirmation").innerHTML = "Account Login Successful! You will be redirected to the homepage.";
+        setTimeout("location.href = 'index.html'", timeout);
+        return true;
+      }
     }
-  }
-  //} catch (e) {
+  } catch (e) {
 
-  //}
+  }
   document.getElementById("login-confirmation").innerHTML = "Account Login Failed! Wrong Username/Password.";
   restart(timeout);
   return false;
@@ -169,7 +239,7 @@ function getLoginStatus() {
   try {
     var lg = localStorage.getItem("youth-immi-logged-in");
     if ((lg == null) || (lg == "")) {
-      lg = false;
+      return false;
     } else {
       if (lg == "true") {
         return true;
@@ -198,6 +268,7 @@ function setUsernameLabel() {
   }
 }
 
+//a function to do nothing at all
 function nothing() {
 
 }
@@ -231,6 +302,7 @@ function nothing() {
 
 //function to run all onload functions (except test.html)
 function main() {
+  getLanguage();
   navBarInjection();
   setUsernameLabel();
   setLoginButton();
