@@ -64,7 +64,7 @@ function getMP3Name(n) {
     result += "test";
   } //need to add more cases for each page
   result += "-" + lang; //to get MP3 for that language
-  return "test.mp3"; //result + ".mp3"; //commented out, test.mp3 for now
+  return url + "sound/page-audio/test.mp3"; //result + ".mp3"; //commented out, test.mp3 for now
 }
 
 function toggleAudio() {
