@@ -58,12 +58,13 @@ function navBarInjection() {
 
 function getMP3Name(n) {
   var result = url + "sound/page-audio/";
-  if (n == "Youth Immigration Rights - Home") {
-    result += "test.mp3";
+  if (n == "Youth Immigration Rights - Home") { //based on what the title is
+    result += "test";
   } else {
-    result += "test.mp3";
-  }
-  return result;
+    result += "test";
+  } //need to add more cases for each page
+  result += "-" + lang; //to get MP3 for that language
+  return "test.mp3"; //result + ".mp3"; //commented out, test.mp3 for now
 }
 
 function toggleAudio() {
