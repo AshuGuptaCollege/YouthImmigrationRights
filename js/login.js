@@ -7,6 +7,7 @@
 var timeout = 1250; //default timeout in seconds * 1000 units
 var url = "http://ashuguptacollege.github.io/YouthImmigrationRights/"; //url global variable for absolute links
 var lang = "en"; //language global variable
+var playingAudio = false;
 
 //login nav bar injection
 function navBarInjection() {
@@ -21,7 +22,7 @@ function navBarInjection() {
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="` + url + `index.html">Home</a></li>
-        <li><a href="` + url + `lawyers.html">Lawyers</a></li>
+        <li><a href="#">Lawyers</a></li>
         <li><a href="` + url + `resources.html">Resources</a></li>
         <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,6 +35,7 @@ function navBarInjection() {
                   <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('fr')">` + getLanguageLabel(lang, "fr") + `&nbsp;&nbsp;&nbsp;<img src="` + url + `images/assets/lang-flags/fr.png" width="20px"></img></a><br />
                 </div>
         </li>
+        <li><a onclick="playAudio('` + document.getElementsByTagName("title")[0].innerHTML + `')"><span id="volume-span" class="glyphicon glyphicon-volume-up"></span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a id="story-creator-link" href="` + url + `creator/index.html">Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
@@ -50,6 +52,36 @@ function navBarInjection() {
     document.getElementById("nav-footer").innerHTML = footer;
   } catch (e) {
 
+  }
+}
+
+function getMP3Name(n) {
+  var result = url + "sound/page-audio/";
+  if (n == "Youth Immigration Rights - Home") {
+    result += "test.mp3";
+  } else {
+    result += "test.mp3";
+  }
+  return result;
+}
+
+function toggleAudio() {
+  if (playingAudio == true) {
+    playingAudio = false;
+  } else {
+    playingAudio = true;
+  }
+}
+
+function playAudio(l) {
+  var a = new Audio(getMP3Name(l));
+  toggleAudio();
+  if (playingAudio == true) {
+    document.getElementById("volume-span").className = "glyphicon glyphicon-volume-off";
+    a.play();
+  } else {
+    document.getElementById("volume-span").className = "glyphicon glyphicon-volume-up";
+    a.pause();
   }
 }
 
