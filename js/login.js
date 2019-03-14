@@ -8,6 +8,7 @@ var timeout = 1250; //default timeout in seconds * 1000 units
 var url = "http://ashuguptacollege.github.io/YouthImmigrationRights/"; //url global variable for absolute links
 var lang = "en"; //language global variable
 var playingAudio = false;
+var a; //audio object
 
 //login nav bar injection
 function navBarInjection() {
@@ -74,7 +75,7 @@ function toggleAudio() {
 }
 
 function playAudio(l) {
-  var a = new Audio(getMP3Name(l));
+  a = new Audio(getMP3Name(l));
   toggleAudio();
   if (playingAudio == true) {
     document.getElementById("volume-span").className = "glyphicon glyphicon-volume-off";
