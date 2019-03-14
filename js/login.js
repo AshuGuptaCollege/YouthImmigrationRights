@@ -36,7 +36,7 @@ function navBarInjection() {
                   <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('fr')">` + getLanguageLabel(lang, "fr") + `&nbsp;&nbsp;&nbsp;<img src="` + url + `images/assets/lang-flags/fr.png" width="20px"></img></a><br />
                 </div>
         </li>
-        <li><a onclick="playAudio('` + document.getElementsByTagName("title")[0].innerHTML + `')"><span id="volume-span" class="glyphicon glyphicon-volume-up"></span></a></li>
+        <li><a onclick="playAudio()"><span id="volume-span" class="glyphicon glyphicon-volume-up"></span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a id="story-creator-link" href="` + url + `creator/index.html">Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
@@ -332,7 +332,7 @@ function nothing() {
 
 //function to run all onload functions (except test.html)
 function main() {
-  a = new Audio(getMP3Name(l));
+  a = new Audio(getMP3Name(document.getElementsByTagName("title")[0].innerHTML));
   getLanguage();
   navBarInjection();
   setUsernameLabel();
