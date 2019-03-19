@@ -24,7 +24,7 @@ function navBarInjection() {
       <ul class="nav navbar-nav">
         <li class="active"><a href="` + url + `index.html">Home</a></li>
         <li><a href="` + url + `resources.html">Resources</a></li>
-        <li><a href="` + url + `faqs.html">FAQs</a></li>
+        <li><a href="` + url + `faqs.html" title = "Frequently Asked Questions">FAQs</a></li>
         <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   ` + getLanguageLabel(lang, lang) + `&nbsp;<img src="` + url + `images/assets/lang-flags/` + lang + `.png" width="20px"></img>
