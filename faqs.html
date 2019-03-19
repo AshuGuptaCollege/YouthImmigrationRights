@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Youth Immigration - Household</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#237afc"
+      },
+      "button": {
+        "background": "#fff",
+        "text": "#237afc"
+      }
+    },
+    "theme": "edgeless",
+    "position": "top",
+    "content": {
+      "message": "YouthImmigration collects NO identifying information and does not share anything without your consent. The content on this page is not a replacement for legal counsel.",
+      "href": "legal.html"
+    }
+  })});
+
+  $(document).ready(function(){
+  $("button").click(function(){
+    $(this).siblings("ul").toggle();
+    if ($(this).text() === " View Resources") {
+      $(this).html('Close');
+    }
+    else if ($(this).text() === "Close") {
+      $(this).html(' View Resources');
+    }
+  });
+  });
+  </script>
+  <style>
+  .myTitle {
+   margin: 0px;
+   padding: 0px;
+}
+  .list_state {
+  display: none;
+  }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+
+<script src="js/login.js"></script>
+<body onload="main()">
+
+<div id = "nav-div">
+</div>
+
+  <center>
+    <h1 style="font-family: 'Gloria Hallelujah' , cursive;">Resources</h1>
+  </center>
+
+
+<div class = "container">
+  <hr/>
+  <h3 style= "margin-left:20px;">Frequently Asked Questions</h3>
+  <hr/>
+
+</div>
+<div class="container" id = "nav-footer">
+</div>
+
+</body>
+</html>
