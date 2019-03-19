@@ -48,7 +48,7 @@
    margin: 0px;
    padding: 0px;
 }
-  ul {
+  .list_state {
   display: none;
   }
   </style>
@@ -58,42 +58,7 @@
 <script src="js/login.js"></script>
 <body onload="main()">
 
-<div>
-  <nav style="background-color: #E4F2FC; margin-bottom: 50px;" class="navbar navbar-dark bg-dark">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span style="font-size: 125%; color: #4376a0;" class="glyphicon glyphicon-menu-hamburger"></span>
-      </button>
-      <a class="navbar-brand" href="` + url + `index.html" style="font-family: 'Gloria Hallelujah' , cursive;">Youth Immigration</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="` + url + `index.html">Home</a></li>
-        <li><a href="` + url + `lawyers.html">Lawyers</a></li>
-        <li><a href="` + url + `resources.html">Resources</a></li>
-        <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  ` + getLanguageLabel(lang, lang) + `&nbsp;<img src="` + url + `images/assets/lang-flags/` + lang + `.png" width="20px"></img>
-                </a>
-                <div style="min-width: 120px !important; text-align: center;" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('en')">` + getLanguageLabel(lang, "en") + `&nbsp;&nbsp;<img src="` + url + `images/assets/lang-flags/en.png" width="20px"></img></a><br />
-                  <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('sp')">` + getLanguageLabel(lang, "sp") + `&nbsp;<img src="` + url + `images/assets/lang-flags/sp.png" width="20px"></img></a><br />
-                  <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('ch')">` + getLanguageLabel(lang, "ch") + `&nbsp;<img src="` + url + `images/assets/lang-flags/ch.png" width="20px"></img></a><br />
-                  <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('fr')">` + getLanguageLabel(lang, "fr") + `&nbsp;&nbsp;&nbsp;<img src="` + url + `images/assets/lang-flags/fr.png" width="20px"></img></a><br />
-                </div>
-        </li>
-        <li><a onclick="playAudio()"><span id="volume-span" class="glyphicon glyphicon-volume-up"></span></a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a id="story-creator-link" href="` + url + `creator/index.html">Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
-        <li><a href="` + url + `scoreReport.html">Score Report <span class="glyphicon glyphicon-ok-circle"></span></a></li>
-        <li><a href="#" id="username-label">Hi User!</a></li>
-        <li><a onclick="" id="login-btn" href="` + url + `login.html"></a></li>
-      </ul>
-    </div>
-  </div>
-  </nav>
+<div id = "nav-div">
 </div>
 
   <center>
@@ -109,7 +74,7 @@
 <div class = "state">
 <h3 style= "display: inline-block;"><b> Alabama </b></h3>
 <button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
-<ul>
+<ul class="list_state">
   <li> Hispanic Catholic Social Services HCSS La Casita <br/>
 92 Oxmoor Road
 Homewood, AL 35209 <br/>
@@ -122,7 +87,7 @@ Homewood, AL 35209 <br/>
 <div class = "state">
 <h3 style= "display: inline-block;"><b> Arizona </b></h3>
 <button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
-<ul>
+<ul class="list_state">
   <li> <p class= "myTitle"><b> Florence Immigrant and Refugee Rights Project </b></p>
     <p>
     2601 North Highway 79 P.O. Box 654 Florence, AZ 85232 <br/>
@@ -151,7 +116,7 @@ Homewood, AL 35209 <br/>
 <div class = "state">
 <h3 style= "display: inline-block;"><b> Arkansas </b></h3>
 <button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
-<ul>
+<ul class="list_state">
   <li>
     <p class="myTitle"><b>Catholic Charities Immigration Services- Little Rock</b></p>
     <p>2415 N Tyler St Little Rock, AR 72207  <br/>
@@ -169,7 +134,7 @@ Homewood, AL 35209 <br/>
 <div class = "state">
 <h3 style= "display: inline-block;"><b> California (Los Angeles) </b></h3>
 <button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
-<ul>
+<ul class="list_state">
   <li>
     <p class="myTitle"><b>Esperanza Immigrant Rights Project</b></p>
     <p>1530 James M. Wood Blvd. Los Angeles, CA 90015   <br/>
@@ -197,7 +162,7 @@ Homewood, AL 35209 <br/>
 <div class = "state">
 <h3 style= "display: inline-block;"><b> California (San Diego) </b></h3>
 <button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
-<ul>
+<ul class="list_state">
   <li>
     <p class="myTitle"><b>Casa Cornelia Law Center</b></p>
     <p> 2760 Fifth, Suite 200 San Diego, CA 92103   <br/>
@@ -210,7 +175,7 @@ Homewood, AL 35209 <br/>
 <div class = "state">
 <h3 style= "display: inline-block;"><b> California (San Francisco) </b></h3>
 <button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
-<ul>
+<ul class="list_state">
   <li>
     <p class="myTitle"><b>Asian Law Caucus</b></p>
     <p>55 Columbus Ave.San Francisco, CA 94111   <br/>
@@ -253,7 +218,7 @@ Homewood, AL 35209 <br/>
 <div class = "state">
 <h3 style= "display: inline-block;"><b> Colorado </b></h3>
 <button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
-<ul>
+<ul class="list_state">
   <li>
     <p class="myTitle"><b>Catholic Immigration Services Catholic Charities</b></p>
     <p> 4045 Pecos Street Denver, CO 80211   <br/>
@@ -271,7 +236,7 @@ Homewood, AL 35209 <br/>
 <div class = "state">
 <h3 style= "display: inline-block;"><b> Connecticut </b></h3>
 <button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
-<ul>
+<ul class="list_state">
   <li>
     <p class="myTitle"><b>International Institute of Connecticut</b></p>
     <p>670 Clinton Avenue Bridgeport, CT 06605   <br/>
@@ -299,7 +264,7 @@ Homewood, AL 35209 <br/>
 <div class = "state">
 <h3 style= "display: inline-block;"><b> Delaware </b></h3>
 <button class= "btn btn-info btn-md" style="float: right;"> View Resources</button>
-<ul>
+<ul class="list_state">
   <li>
     <p class="myTitle"><b>Community Legal Aid Society</b></p>
     <p>100 W 10th St #801 Wilmington, DE 19801   <br/>
