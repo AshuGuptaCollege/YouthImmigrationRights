@@ -33,12 +33,12 @@
 
   $(document).ready(function(){
   $("button").click(function(){
-    $(this).siblings("ul").toggle();
-    if ($(this).text() === " View Resources") {
-      $(this).html('Close');
+    $(this).siblings("p").toggle();
+    if ($(this).html() === "<span class=\"glyphicon glyphicon-chevron-down\" aria-hidden=\"true\"></span>") {
+      $(this).html('<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>');
     }
-    else if ($(this).text() === "Close") {
-      $(this).html(' View Resources');
+    else if ($(this).html() === "<span class=\"glyphicon glyphicon-chevron-up\" aria-hidden=\"true\"></span>") {
+      $(this).html('<span class=\"glyphicon glyphicon-chevron-down\" aria-hidden=\"true\"></span>');
     }
   });
   });
@@ -48,8 +48,10 @@
    margin: 0px;
    padding: 0px;
 }
-  .list_state {
+  .answer {
   display: none;
+  font-size: 16px;
+  margin-top: 30px;
   }
   </style>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
@@ -62,15 +64,83 @@
 </div>
 
   <center>
-    <h1 style="font-family: 'Gloria Hallelujah' , cursive;">Resources</h1>
+    <h1 style="font-family: 'Gloria Hallelujah' , cursive;">Frequently Asked Questions</h1>
   </center>
 
 
 <div class = "container">
-  <hr/>
-  <h3 style= "margin-left:20px;">Frequently Asked Questions</h3>
-  <hr/>
-
+  <div class = "question">
+    <button class="btn btn-default" style="float: left;"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+  <h3 style= "margin-left: 80px;"><b> What do I do if the police or immigration
+    give me something to sign and tell me I will be in big trouble if I don’t sign it? </b></h3>
+  <p class="answer">
+  DO NOT SIGN IT.  You are not required to sign anything the police or
+   immigration give you before you have had an opportunity to speak with a lawyer.
+    If you are arrested for a crime, you have a right to a lawyer provided by the
+    government for free if you cannot afford your own.  If you are detained by
+     immigration, you have a right to a lawyer, but you must pay for the lawyer
+     or find one who will volunteer to take your case.
+  </p>
+</div>
+<hr/>
+<div class = "question">
+  <button class="btn btn-default" style="float: left;"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+<h3 style= "margin-left: 80px;"><b> If the police ask me about where I was born or
+   whether I have legal immigration status, am I required to answer? </b></h3>
+<p class="answer">
+NO. You are not required to answer questions about where you were born.  You have a right to remain silent.
+</p>
+</div>
+<hr/>
+<div class = "question">
+  <button class="btn btn-default" style="float: left;"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+<h3 style= "margin-left: 80px;"><b>Can I call people when I am detained?</b></h3>
+<p class="answer">
+Yes. You can contact your consulate, your lawyer, or your family.
+</p>
+</div>
+<hr/>
+<div class = "question">
+  <button class="btn btn-default" style="float: left;"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+<h3 style= "margin-left: 80px;"><b>What if I am not fluent in English, and I face deportation proceedings in a court? </b></h3>
+<p class="answer">
+You have a right to a court interpreter in deportation proceedings.
+</p>
+</div>
+<hr/>
+<div class = "question">
+  <button class="btn btn-default" style="float: left;"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+<h3 style= "margin-left: 80px;"><b>Will I be deported if I am a U.S. citizen?</b></h3>
+<p class="answer">
+No. If you are not a U.S. citizen, you can contact your consulate.
+</p>
+</div>
+<hr/>
+<div class = "question">
+  <button class="btn btn-default" style="float: left;"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+<h3 style= "margin-left: 80px;"><b>Can I go to school if I am an undocumented immigrant?</b></h3>
+<p class="answer">
+Yes, you can go to school. And you should!
+</p>
+</div>
+<hr/>
+<div class = "question">
+  <button class="btn btn-default" style="float: left;"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+<h3 style= "margin-left: 80px;"><b>Does my religion impact on my treatment as a undocumented immigrant, or my family?</b></h3>
+<p class="answer">
+NO. Sometimes the police will use things that take the place of religion to discriminate,
+but they are not supposed to treat you different because of your religion or race.
+</p>
+</div>
+<hr/>
+<div class = "question">
+  <button class="btn btn-default" style="float: left;"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+<h3 style= "margin-left: 80px;"><b>Can I take a video or take photographs of what’s happening between ICE and me on the street?</b></h3>
+<p class="answer">
+YES, as long as it does not interfere with immigration or legal enforcement.
+</p>
+</div>
+<hr/>
 </div>
 <div class="container" id = "nav-footer">
 </div>
