@@ -131,9 +131,17 @@ function getLanguageLabel(lg, lb) {
 function changeLanguage(lg) {
   lang = lg;
   localStorage.setItem("yi-lang", lang);
-  setTimeout('window.location.reload()', 10);
+  /*setTimeout('window.location.reload()', 10);*/
   if (lang == "ch") {
-    location.href = "indexch.html";
+    try {
+      window.location.href = "indexch.html";
+    }
+    catch(e) {
+      alert("Error" + e);
+    }
+  }
+  else {
+    window.location.href = "index.html";
   }
 }
 
