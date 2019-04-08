@@ -132,9 +132,32 @@ function changeLanguage(lg) {
   lang = lg;
   localStorage.setItem("yi-lang", lang);
   setTimeout('window.location.reload()', 10);
-  str = "index" + lg + ".html";
-  window.location.href = str;
+  if (lang == "ch") {
+    location.href = "indexch.html";
+  }
 }
+
+function url_redirect(url){
+    var X = setTimeout(function(){
+        window.location.replace(url);
+        return true;
+    },300);
+
+    if( window.location = url ){
+        clearTimeout(X);
+        return true;
+    } else {
+        if( window.location.href = url ){
+            clearTimeout(X);
+            return true;
+        }else{
+            clearTimeout(X);
+            window.location.replace(url);
+            return true;
+        }
+    }
+    return false;
+};
 
 //function to retrieve current language setting or set to english default
 function getLanguage() {
