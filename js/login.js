@@ -132,6 +132,8 @@ function changeLanguage(lg) {
   lang = lg;
   localStorage.setItem("yi-lang", lang);
   setTimeout('window.location.reload()', 10);
+  str = "index" + lg + ".html";
+  window.location.href = str;
 }
 
 //function to retrieve current language setting or set to english default
