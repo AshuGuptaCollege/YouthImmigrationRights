@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Youth Immigration Rights - Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <style>
+  .card:hover {
+    background-color: #F8F8F8;
+  }
+  li {
+    margin: 0 0 3px 0;
+  }
+  </style>
+
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#237afc"
+      },
+      "button": {
+        "background": "#fff",
+        "text": "#237afc"
+      }
+    },
+    "theme": "edgeless",
+    "position": "top",
+    "content": {
+      "message": "YouthImmigration collects NO identifying information and does not share anything without your consent. The content on this page is not a replacement for legal counsel.",
+      "href": "legal.html"
+    }
+  })});
+
+  </script>
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+
+<script src="js/login.js"></script>
+<body onload="main()">
+
+  <div id="nav-div">
+  </div>
+
+  <center><h1 style="font-family: 'Gloria Hallelujah' , cursive;">¡Bienvenido al Proyecto de Inmigración Juvenil!<br /></h1></center>
+
+<div class= "container">
+    <hr />
+    <h1 style= "margin-left:20px;">COSAS QUE DEBES HACER EN UNA EMERGENCIA</h1>
+    <hr />
+    <div class = "row">
+      <div class = "col-md-11" style = "font-size: 16px; margin-left: 20px;">
+       Si la inmigración viene a ti en público o viene a tu casa:</b>
+      <ul>
+        <li><b>Mantente en silencio. No respondas preguntas. Pregunta si eres libre de ir.</b></li>
+        <li> <b>Di no a la búsqueda. La inmigración no puede registrarte a ti,
+           a tus cosas ni a tu hogar sin una orden judicial. </b> </li>
+      </ul>
+      <br/>
+      Si la inmigración te arresta:
+      <ul>
+        <li><b>Obtén un abogado. No firmes nada sin un abogado.</b></li>
+        <li> <b>Conoce un número de teléfono. Llama a su familia o abogado si estás detenido. </b> </li>
+      </ul>
+      <br/>
+      Si la inmigración está tratando de deportarte:
+      <ul>
+        <li><b>Habla con un juez. Por lo general, verás a un juez antes de ser deportado.</b></li>
+        <li> <b>Pide una traducción. El tribunal proporcionará un traductor. </b> </li>
+      </ul>
+  </div>
+</div>
+    <hr />
+    <h3 style = "text-align: center">Explore Topics</h3>
+    <hr />
+    <div class="row">
+    <div class="col-md-4">
+    <div class="card w-20 text-center rounded" style = "padding-top: 20px; padding-bottom: 20px">
+      <div class="card-body">
+        <h3 class="card-title" style = "padding-bottom: 5px">Hogares de estado mixto</h3>
+        <span class="glyphicon glyphicon-home" aria-hidden="true" style = "display: block; font-size: 25px;"></span>
+        <p class="card-text"  style = "padding-top: 15px; padding-bottom: 10px; width: 80%; display: block; margin: 0 auto;">Aprende sobre tener un miembro de la familia indocumentado.</p><br />
+        <button type="button" onclick="location.href = 'mixed-household-at-home.html';" class="btn btn-info btn-md">En el Hogar </button>
+        <button type="button" onclick="location.href = 'mixed-household-in-public.html';" class="btn btn-info btn-md">En público </button>
+        <button type="button" onclick="location.href = 'mixed-household-at-school.html';" class="btn btn-info btn-md">En la escuela</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card w-20 text-center rounded" style = "padding-top: 20px; padding-bottom: 20px">
+      <div class="card-body">
+        <h3 class="card-title" style = "padding-bottom: 5px" >Detención &amp; Deportación</h3>
+        <span class="glyphicon glyphicon-flag" aria-hidden="true" style = "display: block; font-size: 25px;"></span>
+        <p class="card-text" style = "padding-top: 15px; padding-bottom: 10px; width: 80%; display: block; margin: 0 auto;">Aprende sobre los procedimientos de arresto, detención y deportación.</p><br />
+        <button type="button" onclick="location.href = 'detention-and-deportation.html';" class="btn btn-info btn-md">Detención &amp; Deportación</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card w-20 text-center" style = "padding-top: 20px; padding-bottom: 20px">
+      <div class="card-body">
+        <h3 class="card-title" style = "padding-bottom: 5px" >Jóvenes indocumentados</h3>
+          <span class="glyphicon glyphicon-globe" aria-hidden="true" style = "display: block; font-size: 25px;"></span>
+        <p class="card-text" style = "padding-top: 15px; padding-bottom: 10px; width: 80%; display: block; margin: 0 auto;">Aprende sobre ser un joven indocumentado.</p><br />
+        <button type="button" onclick="location.href = 'undocumented-youth-at-home.html';"  class="btn btn-info btn-md">En el Hogar</button>
+        <button type="button" onclick="location.href = 'undocumented-youth-in-public.html';"  class="btn btn-info btn-md">En público </button>
+        <button type="button" onclick="location.href = 'undocumented-youth-at-school.html';" class="btn btn-info btn-md">En la escuela</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<hr />
+<div class="container" id = "nav-footer">
+</div>
+
+</body>
+</html>

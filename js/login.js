@@ -137,11 +137,32 @@ function changeLanguage(lg) {
       window.location.href = "indexch.html";
     }
     catch(e) {
-      alert("Error" + e);
+      alert("Error: " + e);
+    }
+  }
+  else if (lang == "sp") {
+    try {
+      window.location.href = "indexsp.html";
+    }
+    catch(e) {
+      alert("Error: " + e);
+    }
+  }
+  else if (lang == "fr") {
+    try {
+      window.location.href = "indexfr.html";
+    }
+    catch(e) {
+      alert("Error: " + e);
     }
   }
   else {
-    window.location.href = "index.html";
+    try {
+      window.location.href = "index.html";
+    }
+    catch(e) {
+      alert("Error: " + e);
+    }
   }
 }
 
