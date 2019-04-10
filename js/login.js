@@ -58,13 +58,13 @@ function navBarInjection() {
 
 function getMP3Name(n) {
   var result = url + "sound/page-audio/";
-  if (n == "Youth Immigration Rights - Home") { //based on what the title is
+  /*if (n == "Youth Immigration Rights - Home") { //based on what the title is
     result += "test";
   } else {
     result += "test";
-  } //need to add more cases for each page
-  result += "-" + lang; //to get MP3 for that language
-  return url + "sound/page-audio/test.mp3"; //result + ".mp3"; //commented out, test.mp3 for now
+  }*/ //need to add more cases for each page
+  result += "sound-" + lang + ".mp3"; //to get MP3 for that language
+  return url + "sound/page-audio/test.mp3"; //result; //commented out, test.mp3 for now
 }
 
 function toggleAudio() {
@@ -131,29 +131,8 @@ function getLanguageLabel(lg, lb) {
 function changeLanguage(lg) {
   lang = lg;
   localStorage.setItem("yi-lang", lang);
+  window.location.reload();
 }
-
-function url_redirect(url){
-    var X = setTimeout(function(){
-        window.location.replace(url);
-        return true;
-    },300);
-
-    if( window.location = url ){
-        clearTimeout(X);
-        return true;
-    } else {
-        if( window.location.href = url ){
-            clearTimeout(X);
-            return true;
-        }else{
-            clearTimeout(X);
-            window.location.replace(url);
-            return true;
-        }
-    }
-    return false;
-};
 
 //function to retrieve current language setting or set to english default
 function getLanguage() {
@@ -353,7 +332,7 @@ function nothing() {
 }
 
 function redirectToCorrectLanguage() {
-  if (window.location.href.split("/").pop().indexOf("index") != true) {
+  if (window.location.href.split("/").pop().indexOf("index").substring(0,5) != "index") {
     return;
   }
   if (lang == "ch") {
