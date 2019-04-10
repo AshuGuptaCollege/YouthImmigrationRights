@@ -354,6 +354,9 @@ function nothing() {
 }
 
 function redirectToCorrectLanguage() {
+  if (window.location.href.split("/").pop().indexOf("index") != true) {
+    return;
+  }
   if (lang == "ch") {
     try {
       if (window.location.href.split("/").pop() != "indexch.html") {
