@@ -131,39 +131,7 @@ function getLanguageLabel(lg, lb) {
 function changeLanguage(lg) {
   lang = lg;
   localStorage.setItem("yi-lang", lang);
-  /*setTimeout('window.location.reload()', 10);*/
-  if (lang == "ch") {
-    try {
-      window.location.href = "indexch.html";
-    }
-    catch(e) {
-      alert("Error: " + e);
-    }
-  }
-  else if (lang == "sp") {
-    try {
-      window.location.href = "indexsp.html";
-    }
-    catch(e) {
-      alert("Error: " + e);
-    }
-  }
-  else if (lang == "fr") {
-    try {
-      window.location.href = "indexfr.html";
-    }
-    catch(e) {
-      alert("Error: " + e);
-    }
-  }
-  else {
-    try {
-      window.location.href = "index.html";
-    }
-    catch(e) {
-      alert("Error: " + e);
-    }
-  }
+  setTimeout('window.location.reload()', 10);
 }
 
 function url_redirect(url){
@@ -385,6 +353,49 @@ function nothing() {
 
 }
 
+function redirectToCorrectLanguage() {
+  if (lang == "ch") {
+    try {
+      if (window.location.href.split("/").pop() != "indexch.html") {
+        window.location.href = "indexch.html";
+      }
+    }
+    catch(e) {
+      alert("Error: " + e);
+    }
+  }
+  else if (lang == "sp") {
+    try {
+      if (window.location.href.split("/").pop() != "indexsp.html") {
+        window.location.href = "indexsp.html";
+      }
+    }
+    catch(e) {
+      alert("Error: " + e);
+    }
+  }
+  else if (lang == "fr") {
+    try {
+      if (window.location.href.split("/").pop() != "indexfr.html") {
+        window.location.href = "indexfr.html";
+      }
+    }
+    catch(e) {
+      alert("Error: " + e);
+    }
+  }
+  else {
+    try {
+      if (window.location.href.split("/").pop() != "index.html") {
+        window.location.href = "index.html";
+      }
+    }
+    catch(e) {
+      alert("Error: " + e);
+    }
+  }
+}
+
 //function to run all onload functions (except test.html)
 function main() {
   a = new Audio(getMP3Name(document.getElementsByTagName("title")[0].innerHTML));
@@ -392,4 +403,6 @@ function main() {
   navBarInjection();
   setUsernameLabel();
   setLoginButton();
+  redirectToCorrectLanguage();
 }
+
