@@ -131,7 +131,6 @@ function getLanguageLabel(lg, lb) {
 function changeLanguage(lg) {
   lang = lg;
   localStorage.setItem("yi-lang", lang);
-  setTimeout('window.location.reload()', 10);
 }
 
 function url_redirect(url){
