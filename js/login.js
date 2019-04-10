@@ -332,7 +332,7 @@ function nothing() {
 }
 
 function redirectToCorrectLanguage() {
-  if (window.location.href.split("/").pop().indexOf("index").substring(0,5) != "index") {
+  if (window.location.href.split("/").pop().substring(0,5) != "index") {
     return;
   }
   if (lang == "ch") {
