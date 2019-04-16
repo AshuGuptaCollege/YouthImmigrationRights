@@ -57,13 +57,14 @@ function navBarInjection() {
 }
 
 function getMP3Name(n) {
+  var getLang = localStorage.getItem("yi-lang");
   var result = url + "sound/page-audio/";
   /*if (n == "Youth Immigration Rights - Home") { //based on what the title is
     result += "test";
   } else {
     result += "test";
   }*/ //need to add more cases for each page
-  result += "sound-" + lang + ".m4a"; //to get MP3 for that language
+  result += "sound-" + getLang + ".m4a"; //to get MP3 for that language
   //return url + "sound/page-audio/test.mp3"; //result; //commented out, test.mp3 for now
   return result;
 }
