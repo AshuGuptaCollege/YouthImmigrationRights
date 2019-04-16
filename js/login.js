@@ -33,7 +33,7 @@ function navBarInjection() {
                   <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('en')">` + getLanguageLabel(lang, "en") + `&nbsp;&nbsp;<img src="` + url + `images/assets/lang-flags/en.png" width="20px"></img></a><br />
                   <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('sp')">` + getLanguageLabel(lang, "sp") + `&nbsp;<img src="` + url + `images/assets/lang-flags/sp.png" width="20px"></img></a><br />
                   <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('ch')">` + getLanguageLabel(lang, "ch") + `&nbsp;<img src="` + url + `images/assets/lang-flags/ch.png" width="20px"></img></a><br />
-                  <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('fr')">` + getLanguageLabel(lang, "fr") + `&nbsp;&nbsp;&nbsp;<img src="` + url + `images/assets/lang-flags/fr.png" width="20px"></img></a><br />
+                  <!--<a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('fr')">` + getLanguageLabel(lang, "fr") + `&nbsp;&nbsp;&nbsp;<img src="` + url + `images/assets/lang-flags/fr.png" width="20px"></img></a><br />-->
                 </div>
         </li>
         <li><a style="background-color: #D9534E; border-radius: 5px; color: white !important; cursor: pointer;" onclick="playAudio()"><span style="vertical-align: middle;" id="volume-span" class="glyphicon glyphicon-volume-up"></span>&nbsp; &nbsp;Read Emergency Script</a></li>
