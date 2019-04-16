@@ -36,7 +36,7 @@ function navBarInjection() {
                   <a style="cursor: pointer; text-decoration: none;" class="dropdown-item" onclick="changeLanguage('fr')">` + getLanguageLabel(lang, "fr") + `&nbsp;&nbsp;&nbsp;<img src="` + url + `images/assets/lang-flags/fr.png" width="20px"></img></a><br />
                 </div>
         </li>
-        <li><a onclick="playAudio()"><span id="volume-span" class="glyphicon glyphicon-volume-up"></span></a></li>
+        <li><a style="background-color: #D9534E; border-radius: 5px; color: white !important; cursor: pointer;" onclick="playAudio()"><span style="vertical-align: middle;" id="volume-span" class="glyphicon glyphicon-volume-up"></span>&nbsp; &nbsp;Read Emergency Script</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a id="story-creator-link" href="` + url + `creator/index.html">Creator <span class="glyphicon glyphicon-pencil"></span></a></li>
