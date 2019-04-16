@@ -63,8 +63,9 @@ function getMP3Name(n) {
   } else {
     result += "test";
   }*/ //need to add more cases for each page
-  result += "sound-" + lang + ".mp3"; //to get MP3 for that language
-  return url + "sound/page-audio/test.mp3"; //result; //commented out, test.mp3 for now
+  result += "sound-" + lang + ".m4a"; //to get MP3 for that language
+  //return url + "sound/page-audio/test.mp3"; //result; //commented out, test.mp3 for now
+  return result;
 }
 
 function toggleAudio() {
@@ -386,4 +387,3 @@ function main() {
   setLoginButton();
   redirectToCorrectLanguage();
 }
-
