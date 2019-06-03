@@ -8,6 +8,9 @@ This is the Youth immigration Project website GitHub. We have developed a fully 
 * ready-made legal resources on immigration law
 * an interactive component
   * a quiz scripting engine based on JavaScript (see js/test.js)
+  
+## URL for the Site
+https://ashuguptacollege.github.io/YouthImmigrationRights/
 
 ## Built With
 
